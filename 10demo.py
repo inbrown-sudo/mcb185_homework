@@ -35,4 +35,13 @@ def pythagoras(a, b):
 	return math.sqrt(a**2 + b**2)
 print(pythagoras(3, 4))
 
+def pythagoras(a, b): return math.sqrt(a**2 + b**2)
+
+def circle_area(r): return math.pi * r**2
+def rectangle_area(w, h): return w * h
+
+def triangle_area(w, h): return rectangle_area(w, h) /2
+
+
+
 	
