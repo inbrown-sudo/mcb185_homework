@@ -132,6 +132,36 @@ def dna_complement(base):
 	}
 	return complement.get(base, None)     # Come back to these 4 
 	
+def max_of_three(a, b, c):
+    return max(a, b, c)
+
+def sensitivity(tp, fn):
+    return tp / (tp + fn) if (tp + fn) != 0 else 0.0
+
+def specificity(tn, fp):
+    return tn / (tn + fp) if (tn + fp) != 0 else 0.0
+
+def f1_score(tp, fp, fn):
+    denom = 2 * tp + fp + fn
+    return (2 * tp) / denom if denom != 0 else 0.0
+
+    import math
+
+def shannon_entropy(a, c, g, t):
+    counts = [a, c, g, t]
+    total = sum(counts)
+
+    if total == 0:
+        return 0.0
+
+    entropy = 0.0
+    for count in counts:
+        if count > 0:
+            p = count / total
+            entropy -= p * math.log2(p)
+
+    return entropy                           # Come back to these too
+       
 
 
 
