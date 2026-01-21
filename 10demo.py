@@ -2,7 +2,7 @@
 
 import math 
 
-print('hello, again')    #greeting 
+print('hello, again')        #greeting 
 print(1.5e-2)
 print(1 + 1)
 print(2**3)
@@ -10,9 +10,9 @@ print(pow(2, 3))
 print(2**0.5)
 print(math.sqrt(2))
 print(math.log(2))
-#print(1 / 0)           # divide by zero error
-#print(math.log(0))     # math domain error
-#print(math.sqrt(-1))   # math domain error
+#print(1 / 0)               # divide by zero error
+#print(math.log(0))         # math domain error
+#print(math.sqrt(-1))       # math domain error
 
 print(0.1 * 1) 
 print(0.1 * 3)
@@ -98,23 +98,24 @@ s3 = 'a'
 if s1 < s2: print('A < B')
 if s2 < s3: print('B < a')
 
+# The following results in a Type error
 # a = 1
 # s = 'G'
-# if a < s: print('a < s')    This results in a Type error
+# if a < s: print('a < s')    
 
 def silly(m, x, b):
 	y = m * x + b
 print(silly(2, 3, 4))
 
-def is_integer(n):		   # Determine if number is integer	
+def is_integer(n):		                       # Determine if number is integer	
 	return n % 1 == 0
 print(is_integer(15))
 	
-def is_probability(p):     # Determine if valid probability    
+def is_probability(p):                         # Determine if valid probability    
 	return 0 <= p <= 1
 print(is_probability(15))
 	
-def dna_weight(letter):    # Determine dna weight   
+def dna_weight(letter):                        # Determine dna weight   
 	letter = ('G')
 	if letter == 'A': return 313.2
 	elif letter == 'T': return 304.2
@@ -123,7 +124,7 @@ def dna_weight(letter):    # Determine dna weight
 	else: return None
 print(dna_weight('G'))
 	
-def dna_complement(letter):           # Determine complement of DNA letter
+def dna_complement(letter):                    # Determine complement of DNA letter
 	letter = ('G')
 	if letter == 'A': return 'T'
 	elif letter == 'T': return 'A'
@@ -132,7 +133,7 @@ def dna_complement(letter):           # Determine complement of DNA letter
 	else: return None
 print(dna_complement('G'))
 
-def max_three(a, b, c ):			# Return maximum 3 numbers
+def max_three(a, b, c ):			           # Return maximum 3 numbers
 	if a > b and a > c: return a
 	elif b > a and b > c: return b
 	else: return c
@@ -164,8 +165,7 @@ def shannon_entropy(a, c, g, t):               # Determine Shannon entropy
             entropy -= p * math.log2(p)
 
     return entropy  
-print(shannon_entropy(1, 2, 3, 4 ))                         # Come back to these too
-       
+print(shannon_entropy(1, 2, 3, 4 ))                       
 
 
 
