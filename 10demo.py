@@ -2,7 +2,7 @@
 
 import math 
 
-print('hello, again') #greeting
+print('hello, again')    #greeting 
 print(1.5e-2)
 print(1 + 1)
 print(2**3)
@@ -14,7 +14,7 @@ print(math.log(2))
 #print(math.log(0))     # math domain error
 #print(math.sqrt(-1))   # math domain error
 
-print(0.1 * 1)
+print(0.1 * 1) 
 print(0.1 * 3)
 
 a = 3                       # side of triangle
@@ -106,61 +106,65 @@ def silly(m, x, b):
 	y = m * x + b
 print(silly(2, 3, 4))
 
-def is_integer(x):			
-	return x % 1 == 0
+def is_integer(n):		   # Determine if number is integer	
+	return n % 1 == 0
+print(is_integer(15))
 	
-def is_probability(p):       
+def is_probability(p):     # Determine if valid probability    
 	return 0 <= p <= 1
+print(is_probability(15))
 	
-def dna_molecular_weight(base):     
-	base = base.upper()
-	weight = {
-	"A": 313.2, 
-	"C": 289.2, 
-	"G": 329.2, 
-	"T": 304.2
-	}
-	return weight.get(base, None)
+def dna_weight(letter):    # Determine dna weight   
+	letter = ('G')
+	if letter == 'A': return 313.2
+	elif letter == 'T': return 304.2
+	elif letter == 'C': return 289.2
+	elif letter == 'G': return 329.2
+	else: return None
+print(dna_weight('G'))
 	
-def dna_complement(base):            
-	base = base.upper()
-	complement = {
-	"A": "T", 
-	"T": "A", 
-	"C": "G", 
-	"G": "C"
-	}
-	return complement.get(base, None)     # Come back to these 4 
-	
-def max_of_three(a, b, c):
-    return max(a, b, c)
+def dna_complement(letter):           # Determine complement of DNA letter
+	letter = ('G')
+	if letter == 'A': return 'T'
+	elif letter == 'T': return 'A'
+	elif letter == 'C': return 'G'
+	elif letter == 'G': return 'C'
+	else: return None
+print(dna_complement('G'))
 
-def sensitivity(tp, fn):
-    return tp / (tp + fn) if (tp + fn) != 0 else 0.0
+def max_three(a, b, c ):			# Return maximum 3 numbers
+	if a > b and a > c: return a
+	elif b > a and b > c: return b
+	else: return c
+print(max_three(1, 2, 3 ))
 
-def specificity(tn, fp):
-    return tn / (tn + fp) if (tn + fp) != 0 else 0.0
+def sensitivity(tp, fn):                       # sensitivity, true positive rate
+	if (tp + fn) == 0: return None
+	else: return tp / (tp + fn)
+print(sensitivity(10, 50 ))
 
-def f1_score(tp, fp, fn):
-    denom = 2 * tp + fp + fn
-    return (2 * tp) / denom if denom != 0 else 0.0
+def specificity(tn, fp):					   # specificity, true negative rate
+    if (tn + fp) == 0: return None
+    else: return tn / (tn + fp)
+print(specificity(10, 50 ))
 
-    import math
+def F1_score(tp, fp, fn):                      # Determine F1 score
+    if 2 * tp + fp + fn == 0: return None
+    else: return (2 * tp) / (2 * tp + fp + fn)
+print(F1_score(10, 20, 30, ))
 
-def shannon_entropy(a, c, g, t):
-    counts = [a, c, g, t]
-    total = sum(counts)
-
-    if total == 0:
-        return 0.0
+def shannon_entropy(a, c, g, t):               # Determine Shannon entropy
+    total = a + c + g + t
+    if total == 0: return 0.0
 
     entropy = 0.0
-    for count in counts:
+    for count in (a, c, g, t ):
         if count > 0:
             p = count / total
             entropy -= p * math.log2(p)
 
-    return entropy                           # Come back to these too
+    return entropy  
+print(shannon_entropy(1, 2, 3, 4 ))                         # Come back to these too
        
 
 
