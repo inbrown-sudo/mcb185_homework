@@ -146,6 +146,9 @@ def minimum(val):
 	for val in vals[1:]:
 		if val < mini: mini = val
 	return mini
+
+vals = [5, 2, 6, 34]
+print(minimum(vals))
 	
 # Write a function that returns both the minimum and maximum values of a list
 
@@ -156,13 +159,18 @@ def min_max(vals):
 		if val < mini: mini = val
 		if val > maxi: maxi = val
 	return mini, maxi
-	
+
+vals = [34, 64, 7, 35]
+print(min_max(vals))
 # Write a function that returns the mean of the values in a list
 
 def mean(vals):
 	total = 0
 	for val in vals: total += val
 	return total / len(vals)
+	
+vals = [15, 24, 35, 24, 55]
+print(mean(vals))
 	
 # Write a function that computes the entropy of a probability distribution
 
