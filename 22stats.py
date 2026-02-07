@@ -33,5 +33,3 @@ def main():
 if __name__ == "__main__": main()
 
 # Command line = python3 22stats.py '__ __ __ __ __ __'
-
-# Not git pushed yet 
