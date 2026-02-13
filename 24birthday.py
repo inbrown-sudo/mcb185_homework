@@ -27,4 +27,57 @@ probability = duplicate_count / trials * 100
 print(f'{probability:.2f}%')
 
 # Command line = python3 24birthday.py 10000 365 23
-# Not git pushed yet 
+
+import sys
+import random
+
+people = int(sys.argv[1])
+calendar = int(sys.argv[2])
+iterations = int(sys.argv[3])
+
+sames = 0
+for _ in range(iterations):
+	calendar = [0] * days
+	same_birthday = False 
+	for _ in range(people):
+		bday = random.randint(0, days-1)
+		if calendar[bday] == 1:
+		same_birthday = True
+		break
+		calendar[bday] += 1 
+
+	same_birthday = False 
+	for v in calendar:
+		if v > 1:
+			same_birthday = True 
+			break
+			
+	if same_brithday: sames += 1
+
+print(sames/iterations)
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
