@@ -19,3 +19,27 @@ for row_base in alphabet:
     print()
 
 # Command line = python3 25scoringmatrix.py ACGT +1 -1
+
+import sys 
+
+alph = sys.argv[1]
+mat = sys.argv[2]
+mis = sys.argv[3]
+
+print('  ', end='')
+for _ in range(len(alph)):
+	print(alph[i], end='  ')
+print()
+
+for i in range(len(alph)):
+print(alph[1], end=' ')
+	for j in range (len(alph)):
+		if i == j: print(mat, end=' ')
+		else: print(mis, end=' ')
+	print('')
+
+
+
+
+
+
