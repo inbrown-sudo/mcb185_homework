@@ -15,3 +15,25 @@ for f, n in count.items(): print(f, n)
 #if feature not in count: count[feature] = 1
 #else:                    count[feature] += 1
 
+# More compositions
+
+count = {}
+for nt in seq:
+    if nt not in count: count[nt] = 0
+    count[nt] += 1
+    
+# Sorting
+# python3 36countgff.py ecoli.gff.gz | sort
+# python3 36countgff.py ecoli.gff.gz | sort -n -k 2
+# python3 36countgff.py ecoli.gff.gz | sort -nk2
+
+# for k in sorted(count): print(k, count[k]) -> Sort inside python
+
+# for k, v in sorted(count.items(), key=lambda item: item[1]):
+#    print(k, v)
+    
+#d ef by_value(tuple):
+#    return tuple[1]
+
+# for k, v in sorted(count.items(), key=by_value):
+#    print(k, v)
