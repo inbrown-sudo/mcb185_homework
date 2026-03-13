@@ -71,30 +71,14 @@ def kd_dict(seq):
     kd = 0
     for aa in seq: kd += kdtable[aa]
     return kd/len(seq)
-
-# More compositions
-
-count = {}
-for nt in seq:
-    if nt not in count: count[nt] = 0
-    count[nt] += 1
     
-# Sorting
+# K-mers 
 
-python3 36countgff.py ecoli.gff.gz | sort
-python3 36countgff.py ecoli.gff.gz | sort -n -k 2
-python3 36countgff.py ecoli.gff.gz | sort -nk2
-
-for k in sorted(count): print(k, count[k]) # Sort inside python
-
-for k, v in sorted(count.items(), key=lambda item: item[1]):
-    print(k, v)
+import itertools
+for nts in itertools.product('ACGT', repeat=2):
+    print(nts)
     
-def by_value(tuple):
-    return tuple[1]
 
-for k, v in sorted(count.items(), key=by_value):
-    print(k, v)
     
 
      
